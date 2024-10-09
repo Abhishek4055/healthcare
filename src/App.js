@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6">Dashboard</Typography>
+          <Typography>Dashboard</Typography>
         </Toolbar>
       </AppBar>
       <Container>
@@ -33,8 +33,9 @@ function App() {
                 display: "flex",
                 justifyContent: "space-between",
                 border: "1px solid #ccc",
-                flexDirection: "row", // Make it one line
-                alignItems: "center", // Align items in the center
+                flexDirection: "row",
+                alignItems: "center",
+                gap: "12px",
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -42,9 +43,10 @@ function App() {
                   variant="subtitle1"
                   sx={{
                     display: "inline-block",
-                    marginRight: 2,
+                    marginRight: 1,
+                    padding: 1,
                     fontWeight: "bold",
-                    fontSize: "0.875rem", // Reduced font size
+                    fontSize: "0.5rem",
                   }}
                 >
                   PROJECT NAME:
@@ -53,8 +55,9 @@ function App() {
                   variant="subtitle2"
                   sx={{
                     display: "inline-block",
-                    marginRight: 4,
-                    fontSize: "0.875rem", // Reduced font size
+                    marginRight: 2,
+                    padding: 1,
+                    fontSize: "0.5rem",
                   }}
                 >
                   {data.project_name}
@@ -63,9 +66,10 @@ function App() {
                   variant="subtitle1"
                   sx={{
                     display: "inline-block",
-                    marginRight: 2,
+                    marginRight: 1,
+                    padding: 1,
                     fontWeight: "bold",
-                    fontSize: "0.875rem", // Reduced font size
+                    fontSize: "0.5rem",
                   }}
                 >
                   OUTPUT DATASET NAME:
@@ -74,8 +78,9 @@ function App() {
                   variant="subtitle2"
                   sx={{
                     display: "inline-block",
-                    marginRight: 4,
-                    fontSize: "0.875rem", // Reduced font size
+                    marginRight: 2,
+                    padding: 1,
+                    fontSize: "0.5rem",
                   }}
                 >
                   {data.output_name}
@@ -85,8 +90,9 @@ function App() {
                   sx={{
                     display: "inline-block",
                     marginRight: 2,
+                    padding: 1,
                     fontWeight: "bold",
-                    fontSize: "0.875rem", // Reduced font size
+                    fontSize: "0.5rem",
                   }}
                 >
                   LAST RUN:
@@ -95,8 +101,9 @@ function App() {
                   variant="subtitle2"
                   sx={{
                     display: "inline-block",
-                    marginRight: 4,
-                    fontSize: "0.875rem", // Reduced font size
+                    marginRight: 2,
+                    padding: 1,
+                    fontSize: "0.6rem",
                   }}
                 >
                   {data.last_run}
@@ -106,8 +113,9 @@ function App() {
                   sx={{
                     display: "inline-block",
                     marginRight: 2,
+                    padding: 1,
                     fontWeight: "bold",
-                    fontSize: "0.875rem", // Reduced font size
+                    fontSize: "0.6rem",
                   }}
                 >
                   Rows:
@@ -116,7 +124,9 @@ function App() {
                   variant="subtitle2"
                   sx={{
                     display: "inline-block",
-                    fontSize: "0.875rem", // Reduced font size
+                    padding: 1,
+                    marginRight: 2,
+                    fontSize: "0.6rem",
                   }}
                 >
                   {data.row_count}
@@ -125,7 +135,7 @@ function App() {
             </Box>
             <Table data={data} />
           </Box>
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{ flex: 1, marginTop: 2 }}>
             <WorkflowPanel steps={data.workflow_steps} />
           </Box>
         </Box>
